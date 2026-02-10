@@ -1,6 +1,27 @@
-# 💖 Valentine Proposal Website
+# 💖 Valentine Proposal Website - UPDATED VERSION
 
-A romantic, interactive Valentine's Day proposal website built with pure HTML, CSS, and vanilla JavaScript.
+A romantic, interactive Valentine's Day proposal website with floating hearts, roses, bouquets, playful meme GIFs, and a reset button!
+
+## ✨ NEW FEATURES
+
+### 🌹 Floating Background Elements
+- Beautiful floating hearts (💖❤️💕💗💓), roses (🌹), and bouquets (💐)
+- Smooth animations throughout all pages
+- Creates a romantic, magical atmosphere
+
+### 🤍 White Heart Button
+- The "YES" button now features a white heart (🤍)
+- More elegant and romantic look
+
+### 🎉 Playful Meme GIF
+- Celebration page includes a fun meme GIF
+- Makes the experience more playful and memorable
+- You can easily replace it with your own GIF!
+
+### 🔄 Reset Button
+- Replaced the sound toggle with a reset button
+- Located at bottom-right corner
+- Allows her to restart the experience anytime
 
 ## 🚀 Quick Deploy to GitHub Pages
 
@@ -32,64 +53,64 @@ A romantic, interactive Valentine's Day proposal website built with pure HTML, C
 - Your site will be live at: `https://YOUR-USERNAME.github.io/valentine-proposal/`
 - Share this link and watch the magic happen! ✨
 
-## 📱 Alternative: Netlify (Even Easier!)
-
-1. Go to [netlify.com](https://netlify.com) and sign up
-2. Drag and drop your 3 files into Netlify
-3. Get instant link: `https://random-name.netlify.app`
-4. Done! 🎊
-
-## ✨ Features
-
-- 5 interactive pages with smooth transitions
-- Playful "No" button that moves away
-- Beautiful celebration with hearts & confetti
-- Mobile-optimized and touch-friendly
-- Works on all devices
-
 ## 🎨 How to Customize
 
-### Change the Questions
+### Change the Meme GIF
+Edit `index.html` - find this line:
+```html
+<img src="https://media.giphy.com/media/g9582DNuQppxC/giphy.gif" alt="Celebration" class="celebration-gif">
+```
+
+**Replace with your own GIF:**
+1. Go to [giphy.com](https://giphy.com)
+2. Find a funny/romantic GIF you like
+3. Right-click → Copy image address
+4. Paste it in the `src="..."` part
+
+**Some good alternatives:**
+- Excited celebration: `https://media.giphy.com/media/artj92V8o75VPL7AeQ/giphy.gif`
+- Happy dance: `https://media.giphy.com/media/S9i8jJxTvAKVHVMvvW/giphy.gif`
+- Cute hearts: `https://media.giphy.com/media/l0HlSJ6xxCxDySHrW/giphy.gif`
+- Funny yes: `https://media.giphy.com/media/Od0QRnzwRBYmDU3eEO/giphy.gif`
+
+### Change the Meme Caption
+Edit `index.html` - find this line:
+```html
+<p class="meme-caption">Let's gooooo! 🎉</p>
+```
+Change the text to whatever you want!
+
+### Change Questions
 Edit `index.html` - find the text you want to change:
 ```html
 <h1 class="question">Your new text here</h1>
 ```
 
-### Change Colors
-Edit `style.css` - find these gradients and change the colors:
-```css
-background: linear-gradient(135deg, #FF6B9D 0%, #FFA3C7 100%);
+### Add More Floating Elements
+Edit `index.html` - in the `floating-bg-elements` section, add more:
+```html
+<div class="floating-element rose">🌹</div>
+<div class="floating-element heart">💖</div>
+<div class="floating-element bouquet">💐</div>
 ```
 
-### Change Music
-Edit `index.html` - replace the audio URL:
-```html
-<source src="YOUR-MUSIC-URL.mp3" type="audio/mpeg">
-```
+You can add any emoji! Ideas: 💝🎀💌✨🦋
 
 ## 💡 Tips for Best Results
 
-- Send the link in the evening for romance
-- Make sure they open it on their phone
-- Time it for a few days before Valentine's Day
-- Get ready to screenshot their reaction! 📸
+- Send the link in the evening for maximum romance
+- The reset button lets her replay it with friends!
+- Screenshot her reaction! 📸
 
 ## 🐛 Troubleshooting
 
 **Site not loading?**
 - Wait 2-3 minutes after enabling GitHub Pages
 - Try opening in incognito/private mode
-- Check if repository is set to Public
 
-**Music not playing?**
-- Music is muted by default (that's normal!)
-- User clicks the 🔇 button to unmute
-- Some browsers block autoplay
-
-**"No" button not moving?**
-- Make sure JavaScript is enabled
-- Works best on modern browsers
-- Try refreshing the page
+**GIF not loading?**
+- Make sure you copied the direct image URL
+- Try a different GIF from Giphy
 
 ## 📄 Files Included
 
@@ -98,16 +119,8 @@ Edit `index.html` - replace the audio URL:
 - `script.js` - Interactive magic
 - `README.md` - This guide
 
-## 🌟 The Experience
-
-1. **Page 1:** "Are you single, by any chance?"
-2. **Page 2:** "Are you free on Valentine's Day?"
-3. **Page 3:** "Okay okay… we both know you like me 😏"
-4. **Page 4:** "Will you be my Valentine?" (YES ❤️ / No)
-5. **Page 5:** Celebration! 🎉
-
 ---
 
 **Good luck with your Valentine proposal! 💖**
 
-Built with love, HTML, CSS, and JavaScript ❤️
+Built with love, floating roses, playful memes, and lots of ❤️
