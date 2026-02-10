@@ -1,0 +1,330 @@
+/* ===== RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #FFE5E5 0%, #FFF0F5 50%, #FFE5EC 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ===== PAGE CONTAINER ===== */
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+    padding: 20px;
+}
+
+.page.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===== CONTENT CONTAINER ===== */
+.content {
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+    animation: slideUp 0.8s ease;
+}
+
+/* ===== TYPOGRAPHY ===== */
+.question {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: 700;
+    color: #D84A76;
+    margin-bottom: 40px;
+    line-height: 1.4;
+    text-shadow: 0 2px 4px rgba(216, 74, 118, 0.1);
+}
+
+/* ===== BUTTONS ===== */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 16px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Button Variants */
+.btn-primary {
+    background: linear-gradient(135deg, #FF6B9D 0%, #FFA3C7 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #FF5087 0%, #FF8FB8 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #C490E4 0%, #D8A9F0 100%);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #B579DB 0%, #CA94E8 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(196, 144, 228, 0.4);
+}
+
+.btn-accent {
+    background: linear-gradient(135deg, #FFB6C1 0%, #FFC9D4 100%);
+    color: #D84A76;
+}
+
+.btn-accent:hover {
+    background: linear-gradient(135deg, #FFA0AE 0%, #FFB8C9 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 182, 193, 0.4);
+}
+
+.btn-yes {
+    background: linear-gradient(135deg, #FF1744 0%, #FF5252 100%);
+    color: white;
+    font-size: 1.4rem;
+    padding: 20px 50px;
+}
+
+.btn-yes:hover {
+    background: linear-gradient(135deg, #E60033 0%, #FF3D3D 100%);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 23, 68, 0.5);
+}
+
+.btn-no {
+    background: #F0F0F0;
+    color: #999;
+    font-size: 1rem;
+    padding: 12px 30px;
+    position: relative;
+    transition: all 0.1s ease;
+}
+
+.btn-no:hover {
+    background: #E8E8E8;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===== PAGE 5: CELEBRATION ===== */
+.celebration {
+    position: relative;
+    z-index: 10;
+}
+
+.celebration-text {
+    animation: pulse 1.5s ease infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Hearts Animation */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 2rem;
+    animation: floatUp 4s ease-in infinite;
+    opacity: 0;
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 0;
+        transform: translateY(0) rotate(0deg);
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100vh) rotate(360deg);
+    }
+}
+
+/* Confetti Animation */
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    animation: confettiFall 3s ease-in infinite;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Sound Toggle Button */
+.sound-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.sound-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.sound-toggle:active {
+    transform: scale(0.95);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 480px) {
+    .content {
+        padding: 20px;
+    }
+    
+    .question {
+        margin-bottom: 30px;
+    }
+    
+    .btn {
+        font-size: 1.1rem;
+        padding: 14px 35px;
+        min-width: 180px;
+    }
+    
+    .btn-yes {
+        font-size: 1.3rem;
+        padding: 18px 45px;
+    }
+    
+    .sound-toggle {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .btn {
+        min-width: 160px;
+        font-size: 1rem;
+    }
+}
+
+/* ===== ACCESSIBILITY ===== */
+.btn:focus {
+    outline: 3px solid #FF6B9D;
+    outline-offset: 3px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A special Valentine's Day message">
+    <title>💖 Be My Valentine?</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Page 1: Icebreaker -->
+    <div class="page active" id="page1">
+        <div class="content">
+            <h1 class="question">Are you single, by any chance?</h1>
+            <div class="button-container">
+                <button class="btn btn-primary" onclick="goToPage(2)">Yes</button>
+                <button class="btn btn-secondary" onclick="goToPage(2)">Maybe</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2: Emotional Build-up -->
+    <div class="page" id="page2">
+        <div class="content">
+            <h1 class="question">Are you free on Valentine's Day?</h1>
+            <div class="button-container">
+                <button class="btn btn-primary" onclick="goToPage(3)">Yes</button>
+                <button class="btn btn-accent" onclick="goToPage(3)">Yes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3: Playful Pause -->
+    <div class="page" id="page3">
+        <div class="content">
+            <h1 class="question fade-in">Okay okay… we both know you like me 😏</h1>
+        </div>
+    </div>
+
+    <!-- Page 4: Final Valentine Question -->
+    <div class="page" id="page4">
+        <div class="content">
+            <h1 class="question">Will you be my Valentine?</h1>
+            <div class="button-container">
+                <button class="btn btn-yes" onclick="goToPage(5)">YES ❤️</button>
+                <button class="btn btn-no" id="noButton" onmouseover="moveButton()" ontouchstart="moveButton()">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 5: Celebration -->
+    <div class="page" id="page5">
+        <div class="content celebration">
+            <h1 class="question celebration-text">You just made my Valentine perfect 💖</h1>
+            <div class="hearts-container" id="heartsContainer"></div>
+            <div class="confetti-container" id="confettiContainer"></div>
+        </div>
+        <!-- Optional background music (muted by default) -->
+        <audio id="celebrationMusic" loop muted>
+            <source src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_4a456bd2d6.mp3" type="audio/mpeg">
+        </audio>
+        <button class="sound-toggle" id="soundToggle" onclick="toggleSound()">🔇</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
