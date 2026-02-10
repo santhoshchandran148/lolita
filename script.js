@@ -73,7 +73,7 @@ function startCelebration() {
  */
 function createFloatingHearts() {
     const heartsContainer = document.getElementById('heartsContainer');
-    const heartEmojis = ['❤️', '💕', '💖', '💗', '💓', '💝'];
+    const heartEmojis = ['❤️', '💕', '💖', '💗', '💓', '💝', '🤍'];
     
     // Create hearts at intervals
     setInterval(() => {
@@ -148,23 +148,29 @@ function createConfetti() {
     }, 3000);
 }
 
-// ===== SOUND TOGGLE =====
+// ===== RESET FUNCTION =====
 /**
- * Toggle background music on/off
+ * Reset the entire experience back to Page 1
+ * Allows user to start over
  */
-function toggleSound() {
-    const music = document.getElementById('celebrationMusic');
-    const toggleButton = document.getElementById('soundToggle');
+function resetExperience() {
+    // Clear any existing intervals (stop confetti/hearts creation)
+    const heartsContainer = document.getElementById('heartsContainer');
+    const confettiContainer = document.getElementById('confettiContainer');
     
-    if (music.muted) {
-        music.muted = false;
-        music.play();
-        toggleButton.textContent = '🔊';
-    } else {
-        music.muted = true;
-        music.pause();
-        toggleButton.textContent = '🔇';
+    if (heartsContainer) heartsContainer.innerHTML = '';
+    if (confettiContainer) confettiContainer.innerHTML = '';
+    
+    // Reset "No" button position
+    const noButton = document.getElementById('noButton');
+    if (noButton) {
+        noButton.style.position = 'relative';
+        noButton.style.left = 'auto';
+        noButton.style.top = 'auto';
     }
+    
+    // Go back to Page 1
+    goToPage(1);
 }
 
 // ===== PREVENT ACCIDENTAL PAGE REFRESH =====
@@ -173,7 +179,7 @@ function toggleSound() {
  */
 window.addEventListener('beforeunload', (e) => {
     const page5 = document.getElementById('page5');
-    if (page5.classList.contains('active')) {
+    if (page5 && page5.classList.contains('active')) {
         e.preventDefault();
         e.returnValue = '';
     }
